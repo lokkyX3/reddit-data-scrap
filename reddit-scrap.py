@@ -34,7 +34,7 @@ def retrieve_post(sub,post_number):
     subreddit = reddit.subreddit(sub)
     sub_hot = subreddit.hot(limit=post_number)
     to_csv = [['title', 'score', 'comment_count', 'author', 'nsfw', 'upvote_ratio', 'post_date']]
-    print('Scrapping '+sub+'...')
+    print('Scrapping {}...'.format(sub))
     try:
         for post in sub_hot:
             if not post.stickied:
