@@ -54,10 +54,10 @@ def retrieve_post(sub,post_number):
 
 for sub in sub_name:
     #csv path
-    csv_file = Path(sub+'_'+datetime.datetime.now().strftime("%Y%m%d")+'.csv') #Note: The csv file names are saved in {subreddit name}_yyyymmdd.csv format
+    csv_file = Path('{}_{}.csv'.format(sub,datetime.datetime.now().strftime("%Y%m%d"))) #Note: The csv file names are saved in {subreddit name}_yyyymmdd.csv format
 
     #check if csv file already exist to prevent overwriting before retrieving post from reddit
     if csv_file.exists():
-        print('File '+sub+'_'+datetime.datetime.now().strftime("%Y%m%d")+'.csv already exist')
+        print('File {}_{}.csv already exist'.format(sub,datetime.datetime.now().strftime("%Y%m%d")))
     else:
         retrieve_post(sub,post_num)
